@@ -60,10 +60,10 @@ git clone https://github.com/your-username/hex-log-parser.git
 cd hex-log-parser
 ```
 
-### 2. Run the parser
+### 2. CLI Usage
 
-```
-python main.py
+```bash
+python3 main.py --file data/sample.log
 ```
 
 ---

@@ -1,7 +1,9 @@
 class Packet:
     def __init__(self, raw_bytes):
+
         self.raw = raw_bytes
         self.header = raw_bytes[:2]
+        
         self.payload = raw_bytes[2:-1]
         self.checksum = raw_bytes[-1]
 
