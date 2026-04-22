@@ -19,7 +19,6 @@ def main():
         raise FileNotFoundError(f"File not found: {args.file}")
 
     lines = read_log(args.file)
-
     hex_lines = extract_hex_lines(lines)
     packets = decode_packets(hex_lines)
 
