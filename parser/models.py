@@ -1,4 +1,5 @@
 class Packet:
+
     def __init__(self, raw_bytes):
 
         self.raw = raw_bytes
