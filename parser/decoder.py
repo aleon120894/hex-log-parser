@@ -1,11 +1,15 @@
-from parser.models import Packet
+from parser.protocols.http import is_http, decode_http
+from parser.protocols.redis import is_redis, decode_redis
 
 
-def decode_packets(hex_lines):
+def decode_data(data: bytes) -> dict:
+    if is_http(data):
+        return decode_http(data)
 
-    packets = []
-    for line in hex_lines:
-        raw_bytes = bytes.fromhex(line)
-        packet = Packet(raw_bytes)
-        packets.append(packet)
-    return packets
+    if is_redis(data):
+        return decode_redis(data)
+
+    return {
+        "protocol": "UNKNOWN",
+        "raw": data.hex()
+    }
