@@ -56,6 +56,23 @@ The goal of this project is to demonstrate:
   * Bulk strings
   * Commands (GET, SET, etc.)
 
+### 📡 MQTT (IoT Protocol)
+
+MQTT is a lightweight publish/subscribe protocol commonly used in IoT systems for device-to-server communication.
+
+ * Detects packet types:
+  * CONNECT
+  * PUBLISH
+  * SUBSCRIBE
+
+* Parses (for PUBLISH):
+  * Topic
+  * Payload
+
+* Works with binary packet structure:
+  * Fixed header
+  * Remaining length
+  * Variable header + payload
 ---
 
 ## 🏗️ Project Structure
@@ -158,7 +175,7 @@ python3 main.py --file data/sample.log
 This project is inspired by real-world experience with:
 
 * Device communication logs
-* Low-level protocols (Jeweller, Fibra, HtS)
+* Low-level protocols (Redis, MQTT)
 * System-level QA and debugging
 
 ---
