@@ -2,7 +2,6 @@ from parser.protocols.http import is_http, decode_http
 from parser.protocols.redis import is_redis, decode_redis
 from parser.protocols.mqtt import is_mqtt, decode_mqtt
 
-
 def decode_packets(hex_lines):
     results = []
 

@@ -1,7 +1,6 @@
 class Packet:
 
     def __init__(self, raw_bytes):
-
         self.raw = raw_bytes
         self.header = raw_bytes[:2]
         
