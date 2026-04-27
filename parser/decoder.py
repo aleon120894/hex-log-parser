@@ -1,6 +1,7 @@
 from parser.protocols.http import is_http, decode_http
 from parser.protocols.redis import is_redis, decode_redis
 from parser.protocols.mqtt import is_mqtt, decode_mqtt
+from parser.protocols.modbus import is_modbus, decode_modbus
 
 def decode_packets(hex_lines):
     results = []
@@ -28,6 +29,9 @@ def decode_data(data: bytes) -> dict:
 
     if is_mqtt(data):
         return decode_mqtt(data)
+
+    if is_modbus(data):
+        return decode_modbus(data)
 
     return {
         "protocol": "UNKNOWN",
