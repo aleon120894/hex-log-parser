@@ -21,6 +21,7 @@ def decode_modbus(data: bytes) -> dict:
 
         result = {
             "protocol": "MODBUS",
+            "length": length,
             "transaction_id": transaction_id,
             "unit_id": unit_id,
             "function": _get_function_name(function_code),

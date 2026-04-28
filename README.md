@@ -73,6 +73,24 @@ MQTT is a lightweight publish/subscribe protocol commonly used in IoT systems fo
   * Fixed header
   * Remaining length
   * Variable header + payload
+
+### 🏭 Modbus (Industrial Protocol)
+
+* Parses Modbus TCP packets:
+  * Transaction ID
+  * Protocol ID
+  * Unit ID
+  * Function Code
+
+* Supports function-level decoding:
+  * Read Holding Registers (0x03)
+  * Write Single Register (0x06)
+
+* Extracts:
+  * Start address
+  * Quantity of registers
+
+* Works with binary packet structure used in industrial devices and PLC systems
 ---
 
 ## 🏗️ Project Structure
@@ -88,6 +106,7 @@ hex-log-parser/
 │   │   ├── http.py
 │   │   ├── redis.py
 │   │   └── mqtt.py
+│   │   └── modbus.py
 ├── utils/
 ├── tests/
 ├── main.py
