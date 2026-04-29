@@ -1,9 +1,10 @@
-from parser.reader import read_log
-from parser.extractor import extract_hex_lines
-from parser.decoder import decode_data, decode_packets
 import argparse
 import os
 import json
+
+from parser.reader import read_log
+from parser.extractor import extract_hex_lines
+from parser.decoder import decode_data, decode_packets
 
 
 def parse_args():

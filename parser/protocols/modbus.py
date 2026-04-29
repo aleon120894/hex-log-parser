@@ -23,12 +23,13 @@ def decode_modbus(data: bytes) -> dict:
             "protocol": "MODBUS",
             "length": length,
             "transaction_id": transaction_id,
+            "protocol_id": protocol_id,
             "unit_id": unit_id,
             "function": _get_function_name(function_code),
             "function_code": function_code
         }
 
-        # 👉 simple data parsing (for Read Holding Registers)
+        # simple data parsing (for Read Holding Registers)
         if function_code == 0x03 and len(data) >= 12:
             start_address = (data[8] << 8) | data[9]
             quantity = (data[10] << 8) | data[11]

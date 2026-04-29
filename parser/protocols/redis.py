@@ -12,8 +12,8 @@ def decode_redis(data: bytes) -> dict:
 
     lines = text.split("\r\n")
     result = []
-
     i = 0
+
     while i < len(lines):
         line = lines[i]
 
